@@ -1,0 +1,38 @@
+{
+  "name": "instagram-proxy-feed",
+  "version": "1.0.1",
+  "description": "Provides an API layer over Instagram's public API.",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=prod node app.js",
+    "prod": "npm start",
+    "dev": "NODE_ENV=dev node app.js",
+    "test": "echo \"Dummy Tests Pass\""
+  },
+  "engines": {
+    "node": "4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahesh247/instagram-proxy-feed.git"
+  },
+  "keywords": [
+    "instagram",
+    "reverse",
+    "proxy",
+    "fetch",
+    "images",
+    "public"
+  ],
+  "author": "mahesh247.com.np",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mahesh247/instagram-proxy-feed/issues"
+  },
+  "homepage": "https://github.com/mahesh247/instagram-proxy-feed#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "https": "^1.0.0",
+    "url": "^0.11.0"
+  }
+}
