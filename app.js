@@ -158,7 +158,7 @@ InstagramFeedProxy.noContent = function (request, response) {
  * @param {object} response
  */
 InstagramFeedProxy.sendToRepo = function (request, response) {
-  response.redirect('https://github.com/whizzzkid/instagram-reverse-proxy');
+  response.redirect('https://github.com/mahesh247/instagram-feed-proxy');
 };
 
 
