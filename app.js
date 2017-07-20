@@ -5,7 +5,7 @@
  * a lot of functionality like limits, pagination, jsonp, etc.
  * This aims to fix that.
  *
- * @author me@nishantarora.in (Nishant Arora)
+ * @author mahesh247.com.np (Mahesh Maharjan)
  */
 
 'use strict';
@@ -52,6 +52,7 @@ InstagramFeedProxy.constructURL = function (protocol, host, path, query) {
  * @return {object} new data as per query.
  */
 InstagramFeedProxy.reconstructJSON = function (request, json) {
+
   if ('items' in json && json.items.length > 0) {
     let itemsAvailable = json.items.length;
 
@@ -68,10 +69,12 @@ InstagramFeedProxy.reconstructJSON = function (request, json) {
       let query = {};
 
       // just copying.
-      query = Object.assign({}, request.query);
-      query['max_id'] = json.items[json.items.length - 1]['id'];
-      json['next'] = this.constructURL(
-          this.PROTOCOL, request.get('host'), request.path, query);
+      if ( json.items.length >= request.query.count ) {
+        query = Object.assign({}, request.query);
+        query['max_id'] = json.items[json.items.length - 1]['id'];
+        json['next'] = this.constructURL(
+            this.PROTOCOL, request.get('host'), request.path, query);
+      }
 
       // just copying.
       query = Object.assign({}, request.query);
