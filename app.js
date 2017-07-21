@@ -82,8 +82,8 @@ InstagramFeedProxy.reconstructJSON = function (request, json) {
       json['previous'] = this.constructURL(
           this.PROTOCOL, request.get('host'), request.path, query);
     }
-    json['data'] = json.items;
-    delete json['items'];
+    /*json['data'] = json.items;
+    delete json['items'];*/
   }
   return json;
 };
